@@ -91,4 +91,10 @@ type Tooltip struct {
 
 	// Configuration item for axisPointer
 	AxisPointer *AxisPointer `json:"axisPointer,omitempty"`
+
+	// https://echarts.apache.org/en/option.html#tooltip.position
+	Position types.FuncStr `json:"position,omitempty"`
+
+	// https://echarts.apache.org/en/option.html#tooltip.extraCssText
+	ExtraCssText string `json:"extraCssText,omitempty"`
 }
