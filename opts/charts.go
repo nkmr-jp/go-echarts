@@ -306,6 +306,9 @@ type LineData struct {
 
 	// Index of y axis to combine with, which is useful for multiple y axes in one chart.
 	YAxisIndex int `json:"YAxisIndex,omitempty"`
+
+	// https://echarts.apache.org/en/option.html#series-line.data.itemStyle
+	ItemStyle *ItemStyle `json:"itemStyle,omitempty"`
 }
 
 // LiquidChart
