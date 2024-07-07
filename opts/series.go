@@ -238,6 +238,9 @@ type MarkLineNameTypeItem struct {
 	ValueDim string `json:"valueDim,omitempty"`
 
 	LineStyle *LineStyle `json:"lineStyle,omitempty"`
+
+	// https://echarts.apache.org/en/option.html#series-bar.markLine.label
+	Label *Label `json:"label,omitempty"`
 }
 
 // MarkLineNameYAxisItem defines a MarkLine on a Y axis.
