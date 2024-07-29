@@ -51,11 +51,4 @@ type DataZoom struct {
 	//     return 'aaa' + value + 'bbb';
 	// }
 	LabelFormatter string `json:"labelFormatter,omitempty"`
-
-	// https://echarts.apache.org/en/option.html#dataZoom-inside.zoomOnMouseWheel
-	ZoomOnMouseWheel any `json:"zoomOnMouseWheel,omitempty"`
-	// https://echarts.apache.org/en/option.html#dataZoom-inside.moveOnMouseMove
-	MoveOnMouseMove any `json:"moveOnMouseMove,omitempty"`
-	// https://echarts.apache.org/en/option.html#dataZoom-inside.moveOnMouseWheel
-	MoveOnMouseWheel any `json:"moveOnMouseWheel,omitempty"`
 }
