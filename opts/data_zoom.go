@@ -16,6 +16,13 @@ type DataZoom struct {
 	// default 100
 	End float32 `json:"end,omitempty"`
 
+	// Specify whether the layout of dataZoom component is horizontal or vertical. What's more, it indicates whether the horizontal axis or vertical axis is controlled by default in catesian coordinate system.
+	//
+	// Valid values:
+	// 'horizontal': horizontal.
+	// 'vertical': vertical.
+	Orient string `json:"orient,omitempty"`
+
 	// Specify the frame rate of views refreshing, with unit millisecond (ms).
 	// If animation set as true and animationDurationUpdate set as bigger than 0,
 	// you can keep throttle as the default value 100 (or set it as a value bigger than 0),
@@ -51,4 +58,14 @@ type DataZoom struct {
 	//     return 'aaa' + value + 'bbb';
 	// }
 	LabelFormatter string `json:"labelFormatter,omitempty"`
+
+	// FilterMode Generally dataZoom component zoom or roam coordinate system
+	// https://echarts.apache.org/en/option.html#dataZoom-inside.filterMode
+	// through data filtering and set the windows of axes internally.
+	// Possible values:
+	//'filter': data that outside the window will be filtered, which may lead to some changes of windows of other axes. For each data item, it will be filtered if one of the relevant dimensions is out of the window.
+	//'weakFilter': data that outside the window will be filtered, which may lead to some changes of windows of other axes. For each data item, it will be filtered only if all of the relevant dimensions are out of the same side of the window.
+	//'empty': data that outside the window will be set to NaN, which will not lead to changes of windows of other axes.
+	//'none': Do not filter data.
+	FilterMode string `json:"filterMode,omitempty"`
 }

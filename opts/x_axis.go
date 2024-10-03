@@ -5,7 +5,6 @@ import "github.com/go-echarts/go-echarts/v2/types"
 // XAxis is the option set for X axis.
 // https://echarts.apache.org/en/option.html#xAxis
 type XAxis struct {
-
 	// Set this to false to prevent the axis from showing.
 	Show types.Bool `json:"show,omitempty"`
 
@@ -154,10 +153,33 @@ type AxisLabel struct {
 	//    }
 	//    return texts.join('/');
 	// }
-	Formatter string `json:"formatter,omitempty"`
+	Formatter types.FuncStr `json:"formatter,omitempty"`
 
 	ShowMinLabel types.Bool `json:"showMinLabel"`
 	ShowMaxLabel types.Bool `json:"showMaxLabel"`
+
+	// Alignment of the label of the min tick. If set to be null, it's the same with other labels .
+	//
+	// Options are:
+	//
+	// 'left'
+	// 'center'
+	// 'right'
+	// null (default)
+	AlignMinLabel string `json:"alignMinLabel,omitempty"`
+
+	// Alignment of the label of the max tick. If set to be null, it's the same with other labels .
+	//
+	// Options are:
+	//
+	// 'left'
+	// 'center'
+	// 'right'
+	// null (default)
+	AlignMaxLabel string `json:"alignMaxLabel,omitempty"`
+
+	// Whether to hide overlapped labels.
+	HideOverlap types.Bool `json:"hideOverlap,omitempty"`
 
 	// Color of axis label is set to be axisLine.lineStyle.color by default. Callback function is supported,
 	// in the following format:
@@ -188,6 +210,24 @@ type AxisLabel struct {
 	LineHeight string `json:"lineHeight,omitempty"`
 
 	BackgroundColor string `json:"backgroundColor,omitempty"`
+
+	// Width of text block.
+	Width int `json:"width,omitempty"`
+
+	// Height of text block.
+	Height int `json:"height,omitempty"`
+
+	// Determine how to display the text when it's overflow. Available when width is set.
+	//
+	// 'truncate' Truncate the text and trailing with ellipsis.
+	// 'break' Break by word
+	// 'breakAll' Break by character.
+	Overflow string `json:"overflow,omitempty"`
+
+	// Ellipsis to be displayed when overflow is set to truncate.
+	//
+	// 'truncate' Truncate the overflow lines.
+	Ellipsis string `json:"ellipsis,omitempty"`
 }
 
 type AxisTick struct {
@@ -223,8 +263,8 @@ type AxisLine struct {
 
 	// Symbol of the two ends of the axis. It could be a string, representing the same symbol for two ends; or an array
 	// with two string elements, representing the two ends separately. It's set to be 'none' by default, meaning no
-	//arrow for either end. If it is set to be 'arrow', there shall be two arrows. If there should only one arrow
-	//at the end, it should set to be ['none', 'arrow'].
+	// arrow for either end. If it is set to be 'arrow', there shall be two arrows. If there should only one arrow
+	// at the end, it should set to be ['none', 'arrow'].
 	Symbol string `json:"symbol,omitempty"`
 
 	// Size of the arrows at two ends. The first is the width perpendicular to the axis, the next is the width parallel to the axis.

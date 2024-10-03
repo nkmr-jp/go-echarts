@@ -8,6 +8,12 @@ type YAxis struct {
 	// Name of axis.
 	Name string `json:"name,omitempty"`
 
+	// Position the position of y-axis.
+	//options:
+	//'left' (default)
+	//'right'
+	Position string `json:"position,omitempty"`
+
 	// Location of axis name.
 	//
 	// Options:
@@ -33,6 +39,10 @@ type YAxis struct {
 
 	// Set this to false to prevent the axis from showing.
 	Show types.Bool `json:"show,omitempty"`
+
+	// Inverse Set this to true to invert the axis.
+	// Default false
+	Inverse types.Bool `json:"inverse,omitempty"`
 
 	// Category data, available in type: 'category' axis.
 	Data interface{} `json:"data,omitempty"`
