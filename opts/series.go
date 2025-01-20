@@ -159,6 +159,9 @@ type ItemStyle struct {
 	// Kline Down candle color
 	Color0 string `json:"color0,omitempty"`
 
+	// Geo area filling color
+	AreaColor string `json:"areaColor,omitempty"`
+
 	// BorderColor is the hart border color
 	// Kline  Up candle border color
 	BorderColor string `json:"borderColor,omitempty"`
@@ -504,6 +507,16 @@ type LineStyle struct {
 type AreaStyle struct {
 	// Fill area color.
 	Color string `json:"color,omitempty"`
+
+	// Origin position of area.
+	// By default, the area between axis line and data will be filled.
+	// This config enables you to fill the area from data to the max or min of the axis data or a specified value.
+	// Valid values:
+	// 'auto' to fill between axis line and data (Default)
+	// 'start' to fill between min axis value (when not inverse) and data
+	// 'end' to fill between max axis value (when not inverse) and data
+	//  number to fill between specified value and data
+	Origin string `json:"origin,omitempty"`
 
 	// Opacity of the component. Supports value from 0 to 1, and the component will not be drawn when set to 0.
 	Opacity float32 `json:"opacity,omitempty"`
