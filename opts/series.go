@@ -102,6 +102,19 @@ type Label struct {
 	// {@xxx}: the value of a dimension named"xxx", for example,{@product}refers the value of"product"` dimension.
 	// {@[n]}: the value of a dimension at the index ofn, for example,{@[3]}` refers the value at dimensions[3].
 	Formatter string `json:"formatter,omitempty"`
+
+	// Stroke color of the text.
+	//
+	//If set as 'inherit', the color will assigned as visual color, such as series color.
+	TextBorderColor string `json:"textBorderColor,omitempty"`
+
+	// Stroke line width of the text.
+	TextBorderWidth float32 `json:"textBorderWidth,omitempty"`
+
+	// Stroke line type of the text.
+	//
+	//Possible values are: 'solid', 'dashed', 'dotted'
+	TexBorderType string `json:"textBorderType,omitempty"`
 }
 
 // LabelLine Configuration of label guide line.
