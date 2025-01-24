@@ -258,6 +258,12 @@ type KlineChart struct {
 
 	// Specify bar max width. Absolute value (like 10) or percentage (like '20%', according to band width) can be used. Auto adapt by default.
 	BarMaxWidth string
+
+	// Index of x axis to combine with, which is useful for multiple x axes in one chart.
+	XAxisIndex int
+
+	// Index of y axis to combine with, which is useful for multiple y axes in one chart.
+	YAxisIndex int
 }
 
 // LiquidChart

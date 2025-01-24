@@ -352,6 +352,8 @@ func WithKlineChartOpts(opt opts.KlineChart) SeriesOpts {
 		s.BarWidth = opt.BarWidth
 		s.BarMinWidth = opt.BarMinWidth
 		s.BarMaxWidth = opt.BarMaxWidth
+		s.XAxisIndex = opt.XAxisIndex
+		s.YAxisIndex = opt.YAxisIndex
 	}
 }
 
