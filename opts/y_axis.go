@@ -104,4 +104,7 @@ type YAxis struct {
 
 	// Settings related to axis pointer.
 	AxisPointer *AxisPointer `json:"axisPointer,omitempty"`
+
+	// NameTextStyle Text style of axis name.
+	NameTextStyle TextStyle `json:"nameTextStyle,omitempty"`
 }
