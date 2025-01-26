@@ -1,5 +1,7 @@
 package opts
 
+import "github.com/go-echarts/go-echarts/v2/types"
+
 // DataZoom is the option set for a zoom component.
 // dataZoom component is used for zooming a specific area, which enables user to
 // investigate data in detail, or get an overview of the data, or get rid of outlier points.
@@ -100,4 +102,34 @@ type DataZoom struct {
 
 	// Height of text block
 	Height float32 `json:"height,omitempty"`
+
+	// How to trigger zoom. Optional values:
+	//
+	// true：Mouse wheel triggers zoom.
+	// false：Mouse wheel can not triggers zoom.
+	// 'shift'：Holding shift and mouse wheel triggers zoom.
+	// 'ctrl'：Holding ctrl and mouse wheel triggers zoom.
+	// 'alt'：Holding alt and mouse wheel triggers zoom.
+	ZoomOnMouseWheel any `json:"zoomOnMouseWheel,omitempty"`
+
+	// How to trigger data window move. Optional values:
+	//
+	// true：Mouse move triggers data window move.
+	// false：Mouse move can not triggers data window move.
+	// 'shift'：Holding shift and mouse move triggers data window move.
+	// 'ctrl'：Holding ctrl and mouse move triggers data window move.
+	// 'alt'：Holding alt and mouse move triggers data window move.
+	MoveOnMouseMove any `json:"moveOnMouseMove,omitempty"`
+
+	// How to trigger data window move. Optional values:
+	//
+	// true：Mouse wheel triggers data window move.
+	// false：Mouse wheel can not triggers data window move.
+	// 'shift'：Holding shift and mouse wheel triggers data window move.
+	// 'ctrl'：Holding ctrl and mouse wheel triggers data window move.
+	// 'alt'：Holding alt and mouse wheel triggers data window move.
+	MoveOnMouseWheel any `json:"moveOnMouseWheel,omitempty"`
+
+	// Whether to prevent default behavior of mouse move event.
+	PreventDefaultMouseMove types.Bool `json:"preventDefaultMouseMove,omitempty"`
 }
