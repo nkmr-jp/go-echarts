@@ -128,7 +128,8 @@ func (bc *BaseConfiguration) json() map[string]interface{} {
 	}
 
 	obj := map[string]interface{}{
-		"title":   visitor.VisitTitleOpt(bc.Title),
+		//"title":   visitor.VisitTitleOpt(bc.Title),
+		"title":   visitor.VisitTitlesOpt(bc.Title),
 		"legend":  visitor.VisitLegendOpt(bc.Legend),
 		"tooltip": visitor.VisitTooltipOpt(bc.Tooltip),
 		"series":  visitor.VisitSeriesOpt(bc.MultiSeries),

@@ -10,6 +10,7 @@ type ConfigurationVisitor interface {
 	// Visit called after all builtin options settled
 	Visit(chart map[string]interface{})
 	VisitTitleOpt(title opts.Title) interface{}
+	VisitTitlesOpt(title []opts.Title) interface{}
 	VisitLegendOpt(legend opts.Legend) interface{}
 	VisitTooltipOpt(tooltip opts.Tooltip) interface{}
 	VisitSeriesOpt(series MultiSeries) interface{}
@@ -47,6 +48,10 @@ func (b BaseConfigurationVisitor) Visit(chart map[string]interface{}) {
 }
 
 func (b BaseConfigurationVisitor) VisitTitleOpt(title opts.Title) interface{} {
+	return title
+}
+
+func (b BaseConfigurationVisitor) VisitTitlesOpt(title []opts.Title) interface{} {
 	return title
 }
 
